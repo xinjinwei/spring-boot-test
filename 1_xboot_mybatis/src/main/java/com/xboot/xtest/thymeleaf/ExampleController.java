@@ -7,15 +7,20 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.support.RequestContext;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Controller
+@Api(tags = "thymeleaf", description = "thymeleaf范例")
 @RequestMapping("/thymeleaf")
 public class ExampleController {
-
+	
+    @ApiOperation(value = "字符串")
     @RequestMapping("/string")
     public String string(ModelMap map) {
         map.addAttribute("userName", "ityouknow:");
