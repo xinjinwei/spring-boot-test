@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Example If/Unless </title>
+</head>
+<body>
+<div >
+    <h1>for 循环</h1>
+    <table>
+        <tr  th:each="user,iterStat : ${users}">
+            <td th:text="${user.userName}">neo</td>
+            <td th:text="${user.passWord}">6</td>
+            <td th:text="${user.userSex}">213</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
