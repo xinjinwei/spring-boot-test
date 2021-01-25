@@ -1,4 +1,4 @@
-package com.xboot.config;
+package com.xboot.config.cache;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;

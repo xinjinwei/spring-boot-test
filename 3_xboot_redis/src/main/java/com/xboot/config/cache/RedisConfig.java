@@ -1,4 +1,4 @@
-package com.xboot.config;
+package com.xboot.config.cache;
 
 import java.lang.reflect.Method;
 

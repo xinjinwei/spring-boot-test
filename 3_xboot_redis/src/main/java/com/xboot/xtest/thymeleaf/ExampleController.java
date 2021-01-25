@@ -7,6 +7,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.support.RequestContext;
 
+import com.xboot.config.exception_log.BizException;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
