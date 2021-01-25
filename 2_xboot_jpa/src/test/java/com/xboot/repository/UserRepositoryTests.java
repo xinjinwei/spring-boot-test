@@ -6,8 +6,6 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.xboot.repository.db1.UserTest1Repository;
-import com.xboot.repository.db2.UserTest2Repository;
 import com.xboot.repository.model.User;
 
 import javax.annotation.Resource;
@@ -18,18 +16,17 @@ import java.util.Date;
 @SpringBootTest
 public class UserRepositoryTests {
 	@Resource
-	private UserTest1Repository userTest1Repository;
-	@Resource
-	private UserTest2Repository userTest2Repository;
+	private UserRepository userRepository;
+
 
 	@Test
 	public void testSave() throws Exception {
 		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
-		String formattedDate = dateFormat.format(date);
+//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG);
+//		String formattedDate = dateFormat.format(date);
 
-		userTest1Repository.save(new User("aa", "aa123456","aa@126.com", "aa",  formattedDate));
-		userTest1Repository.save(new User("bb", "bb123456","bb@126.com", "bb",  formattedDate));
+		userRepository.save(new User("aa2", "aa123456",  date));
+		userRepository.save(new User("bb2", "bb123456", date));
 //		userTest2Repository.save(new User("cc", "cc123456","cc@126.com", "cc",  formattedDate));
 	}
 

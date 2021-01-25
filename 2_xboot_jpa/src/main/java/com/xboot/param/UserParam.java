@@ -1,37 +1,26 @@
-package com.xboot.repository.model;
+package com.xboot.param;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.Date;
 
-@Entity
-public class User {
-    @Id
-    @GeneratedValue
+public class UserParam {
     private long id;
-    @Column(nullable = false, unique = true)
+    @NotEmpty(message="姓名不能为空")
     private String userName;
-    @Column(nullable = false)
+    @NotEmpty(message="密码不能为空")
+    @Length(min=6,message="密码长度不能小于6位")
     private String passWord;
-    @Column(nullable = false)
+    @Max(value = 100, message = "年龄不能大于100岁")
+    @Min(value= 18 ,message= "必须年满18岁！" )
     private int age;
-    @Column(nullable = false)
-    private Date regTime;
-
-    public User() {
-
-    }
-    
-
-    public User(String userName, String passWord, Date regTime) {
-        this.userName = userName;
-        this.passWord = passWord;
-        this.regTime = regTime;
-    }
-    
-    
     public long getId() {
         return id;
     }
@@ -39,7 +28,6 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
-
     public String getUserName() {
         return userName;
     }
@@ -64,22 +52,13 @@ public class User {
         this.age = age;
     }
 
-    public Date getRegTime() {
-        return regTime;
-    }
-
-    public void setRegTime(Date regTime) {
-        this.regTime = regTime;
-    }
-
     @Override
     public String toString() {
-        return "User{" +
+        return "UserParam{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", passWord='" + passWord + '\'' +
                 ", age=" + age +
-                ", regTime=" + regTime +
                 '}';
     }
 }

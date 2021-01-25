@@ -10,6 +10,12 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * 
+ * @author xinjinwei
+ *双mybatis，单jpa，jpa默认使用第一个mybatis的数据源
+ *因为jpa不提供事务处理，所以要自己管理
+ */
 @Configuration
 @EnableTransactionManagement
 public class TransactionManagersConfig {
